@@ -1,0 +1,14 @@
+{
+  "name": "adpages-order-attribution-bigcommerce-resource",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dependency-free BigCommerce resource kit for mapping campaign context into checkout and order review workflows.",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {}
+}
