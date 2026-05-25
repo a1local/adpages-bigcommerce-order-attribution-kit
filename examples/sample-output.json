@@ -1,0 +1,104 @@
+{
+  "capturePlan": {
+    "platform": "BigCommerce",
+    "kit": "adpages-order-attribution-kit",
+    "placement": "Storefront > Script Manager",
+    "storeName": "Northside Bike Co",
+    "storageKey": "adpages_order_attribution",
+    "retentionDays": 30,
+    "allowedParameters": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "gclid",
+      "msclkid"
+    ],
+    "fieldCount": 9,
+    "notes": [
+      "Captures browser-side campaign context only.",
+      "Does not call BigCommerce APIs or external endpoints.",
+      "Order review values require merchant-created checkout fields or a manual staff workflow."
+    ]
+  },
+  "attributionContext": {
+    "landingPage": "https://store.example.com/helmets",
+    "referrer": "https://www.google.com/",
+    "capturedAt": "2026-05-24T10:30:00.000Z",
+    "campaign": {
+      "utm_source": "google",
+      "utm_medium": "cpc",
+      "utm_campaign": "winter-helmets",
+      "utm_content": "responsive-search"
+    },
+    "clickIds": {
+      "gclid": "test-gclid-123"
+    },
+    "hasCampaignContext": true
+  },
+  "orderReviewRows": [
+    {
+      "parameter": "utm_source",
+      "checkoutSelector": "[data-adpages-attribution-field=\"utm_source\"]",
+      "bigCommerceTarget": "Checkout custom field: Campaign source",
+      "orderReviewLabel": "Campaign source",
+      "sampleValue": "google"
+    },
+    {
+      "parameter": "utm_medium",
+      "checkoutSelector": "[data-adpages-attribution-field=\"utm_medium\"]",
+      "bigCommerceTarget": "Checkout custom field: Campaign medium",
+      "orderReviewLabel": "Campaign medium",
+      "sampleValue": "cpc"
+    },
+    {
+      "parameter": "utm_campaign",
+      "checkoutSelector": "[data-adpages-attribution-field=\"utm_campaign\"]",
+      "bigCommerceTarget": "Checkout custom field: Campaign name",
+      "orderReviewLabel": "Campaign name",
+      "sampleValue": "winter-helmets"
+    },
+    {
+      "parameter": "utm_content",
+      "checkoutSelector": "[data-adpages-attribution-field=\"utm_content\"]",
+      "bigCommerceTarget": "Checkout custom field: Campaign content",
+      "orderReviewLabel": "Campaign content",
+      "sampleValue": "responsive-search"
+    },
+    {
+      "parameter": "gclid",
+      "checkoutSelector": "[data-adpages-attribution-field=\"gclid\"]",
+      "bigCommerceTarget": "Internal order review field: Google click ID",
+      "orderReviewLabel": "Google click ID",
+      "sampleValue": "test-gclid-123"
+    },
+    {
+      "parameter": "landing_page",
+      "checkoutSelector": "[data-adpages-attribution-field=\"landing_page\"]",
+      "bigCommerceTarget": "Internal order review field: Landing page",
+      "orderReviewLabel": "Landing page",
+      "sampleValue": "https://store.example.com/helmets"
+    },
+    {
+      "parameter": "referrer",
+      "checkoutSelector": "[data-adpages-attribution-field=\"referrer\"]",
+      "bigCommerceTarget": "Internal order review field: Referrer",
+      "orderReviewLabel": "Referrer",
+      "sampleValue": "https://www.google.com/"
+    },
+    {
+      "parameter": "captured_at",
+      "checkoutSelector": "[data-adpages-attribution-field=\"captured_at\"]",
+      "bigCommerceTarget": "Internal order review field: Captured at",
+      "orderReviewLabel": "Captured at",
+      "sampleValue": "2026-05-24T10:30:00.000Z"
+    }
+  ],
+  "merchantChecklist": [
+    "Install the Script Manager snippet on storefront pages where campaigns land.",
+    "Create or confirm 9 checkout/order review fields before relying on staff reporting.",
+    "Place test traffic on https://store.example.com/helmets?utm_source=google&utm_medium=cpc&utm_campaign=winter-helmets&utm_content=responsive-search&gclid=test-gclid-123 and compare captured values against the order review workflow.",
+    "Document how staff handle missing campaign values before launch.",
+    "Complete BigCommerce App Marketplace requirements before describing this as an app."
+  ]
+}

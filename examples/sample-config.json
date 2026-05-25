@@ -1,0 +1,70 @@
+{
+  "store": {
+    "name": "Northside Bike Co",
+    "baseUrl": "https://store.example.com"
+  },
+  "capture": {
+    "storageKey": "adpages_order_attribution",
+    "retentionDays": 30,
+    "allowedParameters": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "gclid",
+      "msclkid"
+    ]
+  },
+  "sampleRequest": {
+    "currentUrl": "https://store.example.com/helmets?utm_source=google&utm_medium=cpc&utm_campaign=winter-helmets&utm_content=responsive-search&gclid=test-gclid-123",
+    "referrer": "https://www.google.com/",
+    "capturedAt": "2026-05-24T10:30:00.000Z"
+  },
+  "fieldMappings": {
+    "utm_source": {
+      "selector": "[data-adpages-attribution-field=\"utm_source\"]",
+      "bigCommerceField": "Checkout custom field: Campaign source",
+      "reviewLabel": "Campaign source"
+    },
+    "utm_medium": {
+      "selector": "[data-adpages-attribution-field=\"utm_medium\"]",
+      "bigCommerceField": "Checkout custom field: Campaign medium",
+      "reviewLabel": "Campaign medium"
+    },
+    "utm_campaign": {
+      "selector": "[data-adpages-attribution-field=\"utm_campaign\"]",
+      "bigCommerceField": "Checkout custom field: Campaign name",
+      "reviewLabel": "Campaign name"
+    },
+    "utm_content": {
+      "selector": "[data-adpages-attribution-field=\"utm_content\"]",
+      "bigCommerceField": "Checkout custom field: Campaign content",
+      "reviewLabel": "Campaign content"
+    },
+    "gclid": {
+      "selector": "[data-adpages-attribution-field=\"gclid\"]",
+      "bigCommerceField": "Internal order review field: Google click ID",
+      "reviewLabel": "Google click ID"
+    },
+    "msclkid": {
+      "selector": "[data-adpages-attribution-field=\"msclkid\"]",
+      "bigCommerceField": "Internal order review field: Microsoft click ID",
+      "reviewLabel": "Microsoft click ID"
+    },
+    "landing_page": {
+      "selector": "[data-adpages-attribution-field=\"landing_page\"]",
+      "bigCommerceField": "Internal order review field: Landing page",
+      "reviewLabel": "Landing page"
+    },
+    "referrer": {
+      "selector": "[data-adpages-attribution-field=\"referrer\"]",
+      "bigCommerceField": "Internal order review field: Referrer",
+      "reviewLabel": "Referrer"
+    },
+    "captured_at": {
+      "selector": "[data-adpages-attribution-field=\"captured_at\"]",
+      "bigCommerceField": "Internal order review field: Captured at",
+      "reviewLabel": "Captured at"
+    }
+  }
+}
